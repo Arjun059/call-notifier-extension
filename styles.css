@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.time {
+  font-size: 11px;
+  color: gray;
+}
+
+#actions {
+  display: flex;
+  gap: 15px;
+}
+
+.call-row {
+  margin-bottom: 10px;
+  background-color: red;
+}

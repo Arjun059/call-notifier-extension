@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: Arial; width: 300px; padding: 10px; }
+    .card { border: 1px solid #ddd; padding: 8px; margin: 6px 0; }
+    button { margin-bottom: 10px; padding: 6px 10px; }
+  </style>
+</head>
+<body>
+
+  <h3>Incoming Calls</h3>
+
+  <div id="actions">
+  <button id="refreshBtn">🔄 Refresh</button>
+  <button id="retryBtn"><span id="isConnected"></span> Live</button>
+  <button id="keyBtn">🔐 Key</button>
+  </div>
+
+  <span id="key-input-parent"></span>
+  
+  <div id="list"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Call Log Viewer",
+  "version": "1.0",
+
+  "permissions": [
+    "storage",
+    "http://64.227.163.175:8080/*",
+    "http://localhost:8080/*",
+    "notifications"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
+  "icons": {
+    "16": "icon-32.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "96": "icon-96.png",
+    "128": "icon-128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icon-48.png",
+    "default_popup": "popup.html"
+  }
+}
