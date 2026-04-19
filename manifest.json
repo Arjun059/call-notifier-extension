@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Call Log Viewer",
+  "name": "Call Notifier",
   "version": "1.0",
 
   "permissions": [
@@ -10,21 +10,31 @@
     "notifications"
   ],
 
+   "browser_specific_settings": {
+    "gecko": {
+      "id": "call-notifier-extension@gmail.com",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
+    }
+  },
+
   "background": {
     "scripts": ["background.js"],
     "persistent": true
   },
 
   "icons": {
-    "16": "icon-32.png",
-    "32": "icon-32.png",
-    "48": "icon-48.png",
-    "96": "icon-96.png",
-    "128": "icon-128.png"
+    "16": "icons/icon-32.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
   },
 
   "browser_action": {
-    "default_icon": "icon-48.png",
+    "default_icon": "icons/icon-48.png",
     "default_popup": "popup.html"
   }
 }
