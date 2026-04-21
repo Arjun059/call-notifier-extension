@@ -26,8 +26,8 @@ async function loadCalls() {
       return '*'.repeat(num.length - 4) + num.slice(-4);
     }
     const div = document.createElement('div');
-    div.style.marginBottom = '10px';
-    div.style.paddingBottom = '5px';
+    div.style.marginBottom = '12px';
+    div.style.paddingBottom = '10px';
     div.style.borderBottom = '1px solid gray';
 
     div.innerHTML = `
@@ -35,7 +35,13 @@ async function loadCalls() {
       <span class="phone-number" data-full="${log.callerNumber}">
         ${maskNumber(log.callerNumber)}
       </span><br>
-      <small>${new Date(log.receivedAt).toLocaleString()}</small>
+      <small>${new Date(log.receivedAt).toLocaleString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+      })}</small>
     `;
 
     const numberEl = div.querySelector('.phone-number');
@@ -118,6 +124,7 @@ keyBtn?.addEventListener('click', async () => {
         console.log('Submitted:', input.value);
 
         await browser.storage.local.set({ key: input.value });
+        await browser.storage.local.set({ unreadCount: 0, callLogs: [] });
 
         browser.runtime.sendMessage({ type: 'KEY_UPDATE' });
 
